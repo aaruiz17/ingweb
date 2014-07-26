@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1" charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.4.2.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+	<!-- 
+	Creacion de la pagina LogIn con un popup en caso de ingreso fallido
+	-->
+	<div data-role="page" id="LogIn">
+
+		<div data-role="popup" id="pop">
+	      	<div data-role="header">
+	        	<h1>ERROR</h1>
+	      	</div>
+	      	<div data-role="main" class="ui-content">
+	        	<p>El usuario o contraseña son incorrectos</p>
+	      	</div>
+	    </div>
+
+		<div data-role="main" class="ui-content">
+			<form>
+  				<label for="User">User:</label>
+		     	<input type="text" name="User" id="User" data-clear-btn="true">
+		     	<label for="Pass">Password:</label>
+		     	<input type="password" name="Pass" id="Pass" data-clear-btn="true">
+		     	<input type="button" id="Enter" value="Enter">
+		    </form>
+		</div>		
+	</div>
+
+	<!-- 
+	Creacion de la pagina Categorias
+	-->
+	<div data-role="page" id="Categorias">
+		<div data-role="header">
+			<a href="#LogIn" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left ui-btn-icon-notext ui-nodisc-icon ui-alt-icon" data-direction="reverse"></a>
+			<h1>Categorias</h1>
+			<a href="#Profile" class="ui-btn ui-corner-all ui-shadow data-icon='false' ui-btn-icon-left"></a>
+		</div>
+		<div data-role="main" class="ui-content">
+			<ul id="cat" data-role="listview" data-inset="true">
+			</ul>
+		</div>		
+	</div>
+
+	<!-- 
+	Creacion de la pagina Establecimientos
+	-->
+	<div data-role="page" id="Establecimientos">
+		<div data-role="header">
+			<a href="#LogIn" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left ui-btn-icon-notext ui-nodisc-icon ui-alt-icon" data-direction="reverse"></a>
+			<h1>Establecimientos</h1>
+			<a href="#Profile" class="ui-btn ui-corner-all ui-shadow data-icon='false' ui-btn-icon-left"></a>
+		</div>
+		<div data-role="main" class="ui-content">
+			<ul id="est" data-role="listview" data-inset="true">
+			</ul>
+		</div>		
+	</div>
+
+	<!-- 
+	Creacion de la pagina Menu
+	-->
+	<div data-role="page" id="Menu">
+		<div data-role="header">
+			<a href="#LogIn" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left ui-btn-icon-notext ui-nodisc-icon ui-alt-icon" data-direction="reverse"></a>
+			<h1>Menu</h1>
+			<a href="#Profile" class="ui-btn ui-corner-all ui-shadow data-icon='false' ui-btn-icon-left"></a>
+		</div>
+		<div data-role="main" class="ui-content">
+			<table data-role="table" class="ui-responsive ui-shadow">
+                <tbody id="men">
+                </tbody>
+            </table>
+		</div>		
+	</div>
+
+	<!-- 
+	Creacion de la pagina Profile
+	-->
+	<div data-role="page" id="Profile">
+
+		<div data-role="popup" id="pop1">
+	      	<div data-role="header">
+	        	<h1>ERROR</h1>
+	      	</div>
+	      	<div data-role="main" class="ui-content">
+	        	<p>No existen pedidos</p>
+	      	</div>
+	    </div>
+
+		<div data-role="header">
+			<a href="#Categorias" class="ui-btn ui-corner-all ui-shadow ui-icon-back ui-btn-icon-left ui-btn-icon-notext ui-nodisc-icon ui-alt-icon" data-direction="reverse"></a>
+			<h1>Profile</h1>
+		</div>
+		<div data-role="main" class="ui-content">
+			<label id="usuario"></label>
+			<label id="nombre"></label>
+			<label id="apellido"></label>
+			<label id="ID"></label>
+			<label id="fecha"></label>
+			<a href="#" id="pedidos" class="ui-btn" data-transition="slide">Pedidos</a>
+		</div>		
+	</div>
+
+	<!-- 
+	Creacion de la Página Pedidos
+	-->
+	<div data-role="page" id="Pedidos">
+		<div data-role="header">
+			<a href="#Categorias" class="ui-btn ui-corner-all ui-shadow ui-icon-back ui-btn-icon-left ui-btn-icon-notext ui-nodisc-icon ui-alt-icon" data-direction="reverse"></a>
+			<h1>Detalle</h1>
+		</div>
+		<div data-role="main" class="ui-content">
+			<table data-role="table" class="ui-responsive ui-shadow">
+                <tbody id="meni">
+                </tbody>
+            </table>
+            <a href="#" class="ui-btn" data-transition="slide">Realizar Pedido</a>
+		</div>		
+	</div>
+</body>
+</html>
